@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Parametri di Taglio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calcolo Parametri di Taglio</h1>
+        <form id="cuttingParamsForm">
+            <label for="material">Materiale:</label>
+            <select id="material" name="material">
+                <option value="acciaio">Acciaio</option>
+                <option value="ottone">Ottone</option>
+                <option value="alluminio">Alluminio</option>
+            </select>
+
+            <label for="toolType">Tipo di Fresa:</label>
+            <select id="toolType" name="toolType">
+                <option value="hss">HSS</option>
+                <option value="carburo">Carburo</option>
+            </select>
+
+            <label for="cuttingSpeed">Velocità di Taglio (m/min):</label>
+            <input type="number" id="cuttingSpeed" name="cuttingSpeed" required>
+
+            <label for="feedPerTooth">Avanzamento per Dente (mm):</label>
+            <input type="number" id="feedPerTooth" name="feedPerTooth" required>
+
+            <label for="numberOfTeeth">Numero di Denti:</label>
+            <input type="number" id="numberOfTeeth" name="numberOfTeeth" required>
+
+            <label for="toolDiameter">Diametro della Fresa (mm):</label>
+            <input type="number" id="toolDiameter" name="toolDiameter" required>
+
+            <label for="pathRadius">Raggio del Percorso (mm):</label>
+            <input type="number" id="pathRadius" name="pathRadius" required>
+
+            <button type="button" onclick="calculateParams()">Calcola</button>
+        </form>
+
+        <div id="results">
+            <h2>Risultati:</h2>
+            <p id="rpm">Numero di Giri (RPM): </p>
+            <p id="feedRate">Avanzamento (mm/min): </p>
+            <p id="correctedFeedRate">Avanzamento Corretto (mm/min): </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
