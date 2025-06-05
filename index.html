@@ -35,10 +35,11 @@
             <label for="toolDiameter">Diametro della Fresa (mm):</label>
             <input type="number" id="toolDiameter" name="toolDiameter" required>
 
-            <label for="pathRadius">Raggio del Percorso (mm):</label>
-            <input type="number" id="pathRadius" name="pathRadius" required>
+            <label for="pathDiam">Diametro del Percorso (mm):</label>
+            <input type="number" id="pathDiam" name="pathDiam" required>
 
             <button type="button" onclick="calculateParams()">Calcola</button>
+            <button type="button" onclick="saveOperation()">Salva Lavorazione</button>
         </form>
 
         <div id="results">
@@ -46,6 +47,15 @@
             <p id="rpm">Numero di Giri (RPM): </p>
             <p id="feedRate">Avanzamento (mm/min): </p>
             <p id="correctedFeedRate">Avanzamento Corretto (mm/min): </p>
+        </div>
+
+        <div id="operations">
+            <h2>Lavorazioni Salvate:</h2>
+            <label for="savedOperations">Seleziona una lavorazione:</label>
+            <select id="savedOperations" name="savedOperations" onchange="loadOperation()">
+                <option value="">--Seleziona--</option>
+            </select>
+            <button type="button" onclick="deleteOperation()">Cancella Lavorazione</button>
         </div>
     </div>
     <script src="script.js"></script>
